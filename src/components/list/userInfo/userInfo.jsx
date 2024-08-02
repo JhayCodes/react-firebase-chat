@@ -4,13 +4,13 @@ const UserInfo = () => {
     return (
         <div className="userInfo">
             <div className="user">
-                <img src="" alt="" />
-                <h2></h2>
+                <img src="./avatar.png" alt="" />
+                <h2>Josh</h2>
             </div>
             <div className="icons">
-                <img src="" alt="" />
-                <img src="" alt="" />
-                <img src="" alt="" />
+                <img src="./more.png" alt="" />
+                <img src="./video.png" alt="" />
+                <img src="./edit.png" alt="" />
             </div>
         </div>
     )
