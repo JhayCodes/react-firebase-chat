@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./chat.css"
 import EmojiPicker from "emoji-picker-react"
 
@@ -7,7 +7,12 @@ const Chat = () => {
     const [open, setOpen] = useState(false);
     const [text, setText] = useState("");
 
+    //automatically show from last message
+    const endRef = useRef(null);
 
+    useEffect(() => {
+        endRef.current?.scrollIntoView({behavior:"smooth"});
+    }, []);
 
     const handleEmoji = e => {
         setText((prev) => prev + e.emoji);
@@ -32,10 +37,58 @@ const Chat = () => {
                 </div>
             </div>
 
-            <div className="center"></div>
+            <div className="center">
+                <div className="message">
+                    <img src="/avatar.png" alt="" />
+                    <div className="texts">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quibusdam temporibus totam?</p>
+                        <span>2 mins ago</span>
+                    </div>
+                </div>
+                <div className="message own">
+                    <div className="texts">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quibusdam temporibus totam?</p>
+                        <span>2 mins ago</span>
+                    </div>
+                </div>
+                <div className="message">
+                    <img src="/avatar.png" alt="" />
+                    <div className="texts">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quibusdam temporibus totam?</p>
+                        <span>2 mins ago</span>
+                    </div>
+                </div>
+                <div className="message own">
+                    <div className="texts">
+                        <img src="/avatar.png" alt="" />
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quibusdam temporibus totam?</p>
+                        <span>2 mins ago</span>
+                    </div>
+                </div>
+                <div className="message">
+                    <img src="/avatar.png" alt="" />
+                    <div className="texts">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quibusdam temporibus totam?</p>
+                        <span>2 mins ago</span>
+                    </div>
+                </div>
+                <div className="message own">
+                    <div className="texts">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quibusdam temporibus totam?</p>
+                        <span>2 mins ago</span>
+                    </div>
+                </div>
+                <div className="message">
+                    <img src="/avatar.png" alt="" />
+                    <div className="texts">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quibusdam temporibus totam?</p>
+                        <span>2 mins ago</span>
+                    </div>
+                </div>
+                <div ref={endRef}></div>
+            </div>
 
             <div className="bottom">
-
                 <div className="icons">
                     <img src="/img.png" alt="" />
                     <img src="/camera.png" alt="" />
