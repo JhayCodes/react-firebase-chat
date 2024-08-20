@@ -5,6 +5,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "fire
 import { userAuth, db } from "../lib/firebase";
 import { doc, setDoc } from "firebase/firestore"; 
 import { getStorage, ref } from "firebase/storage";
+import upload from "../lib/upload";
 
 
 
